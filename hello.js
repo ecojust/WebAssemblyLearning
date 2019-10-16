@@ -1623,7 +1623,7 @@ function isDataURI(filename) {
 
 
 
-var wasmBinaryFile = 'a.out.wasm';
+var wasmBinaryFile = 'hello.wasm';
 if (!isDataURI(wasmBinaryFile)) {
   wasmBinaryFile = locateFile(wasmBinaryFile);
 }
