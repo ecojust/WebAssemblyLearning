@@ -12,9 +12,25 @@
 
 <script type="module">
     import {addModule} from './utils/wasm.js';
-    addModule('./test.wasm',function(module){
-        document.write(module._add(1,2))
+    addModule('./add.wasm',function(module){
+        getDuring(module._fibonacci,'C程序');
     });
+    function fibonacci(n) {
+        if (n <= 1) {
+            return n;
+        } else {
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        };
+    };
+    var num = 42;
+    function getDuring(func,type){
+        const start = Date.now();
+        func(num);
+        console.log(type +'执行斐波那契数列消耗时间:' +(Date.now() - start) + '\n');
+    };
+    console.error('递归次数:'+ num);
+    getDuring(fibonacci,'JavaScript')
+
 </script>
 
 </html>

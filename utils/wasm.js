@@ -1,4 +1,5 @@
 const importObj = {
+    global: {},
     env: {
         'memory': new WebAssembly.Memory({initial: 256, maximum: 256}),
         '__memory_base': 0,
