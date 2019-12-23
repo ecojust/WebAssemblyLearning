@@ -1,3 +1,9 @@
+<!--
+ * @Author: 桔子桑
+ * @Date: 2019-12-23 10:36:07
+ * @FilePath: /WebAssemblyLearning/index.html
+ * @Description: 
+ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,27 +16,11 @@
     
 </body>
 
-<script type="module">
+<script type="module" >
     import {addModule} from './utils/wasm.js';
     addModule('./add.wasm',function(module){
-        getDuring(module._fibonacci,'C程序');
+        console.log(module)
     });
-    function fibonacci(n) {
-        if (n <= 1) {
-            return n;
-        } else {
-            return fibonacci(n - 1) + fibonacci(n - 2);
-        };
-    };
-    var num = 42;
-    function getDuring(func,type){
-        const start = Date.now();
-        func(num);
-        console.log(type +'执行斐波那契数列消耗时间:' +(Date.now() - start) + '\n');
-    };
-    console.error('递归次数:'+ num);
-    getDuring(fibonacci,'JavaScript')
-
 </script>
 
 </html>
